@@ -1,0 +1,82 @@
+/*  ......................................... variables  ............................................. */
+/*    end variables    */
+/*     start classes         */
+/*     end classes         */
+/*   start mixin   ..........   */
+/*       background-Overlay          */
+/*   start method to change formcontrol border color for bootstrab  */
+/*    end method to change formcontrol border color for bootstrab  */
+/*     start method to create uo-menu-icon.cat1              */
+/*     end method to create uo-menu-icon.cat1              */
+/*   end methods    */
+/*  ............................................... start classes  ..............................  */
+/*   start font secondColor   ( color:#..... )   */
+/*   end font secondColor     ( color:#..... )  */
+/*    start backGround secondColor    ( background-color:#..... )   */
+/*    start backGround secondColor    ( background-color:#..... )   */
+/*   start border secondColor   ( border-color:#..... )   */
+/*   end border secondColor     ( border-color:#..... )  */
+/*   start form-control secondColor        */
+/*   end form-control secondColor        */
+/*  start bg-overlay */
+/*  end bg-overlay */
+/*  start bg-overlay-reverse */
+/*  end bg-overlay-reverse */
+/*  ............................................... end classes  ..............................  */
+/*  start animation for page loader     */
+@keyframes uo-web-loader {
+  0%,50%,100% {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); }
+  25% {
+    transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -ms-transform: scale(1, 2); } }
+@-webkit-keyframes uo-web-loader {
+  0%,50%,100% {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); }
+  25% {
+    transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -ms-transform: scale(1, 2); } }
+@-moz-keyframes uo-web-loader {
+  0%,50%,100% {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); }
+  25% {
+    transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -ms-transform: scale(1, 2); } }
+@-ms-keyframes uo-web-loader {
+  0%,50%,100% {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); }
+  25% {
+    transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -ms-transform: scale(1, 2); } }
+@-o-keyframes uo-web-loader {
+  0%,50%,100% {
+    transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1); }
+  25% {
+    transform: scale(1, 2);
+    -moz-transform: scale(1, 2);
+    -webkit-transform: scale(1, 2);
+    -ms-transform: scale(1, 2); } }
+/*  end animation for page loader     */

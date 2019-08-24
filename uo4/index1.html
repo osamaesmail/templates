@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <!-- Basic Page Needs -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Light Personal Portfolio Template">
+        <meta name="author" content="Osama Esmail">
+
+        <!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+        <!-- page title -->
+        <title>CUSTOM-UO - Personal Portfolio Template</title>
+
+        <!-- css files -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+
+        <div id="app">
+
+            <!-------------------------start template structure------------------------------------------->
+            <div v-show="!data.show_loader" id="template">
+                <!------------------------------start nav------------------------->
+                <nav>
+                    <div class="container">
+
+                        <!--start brand-->
+                        <div class="brand">
+                            <a href="#"><h4>{{data.brand_name}}</h4></a>
+                        </div>
+                        <!--end brand-->
+
+                        <!--start menu icon-->
+                        <i class="fa menu-icon fa-lg"></i>
+                        <!--end menu icon-->
+
+                        <!--start links-->
+                        <ul class="links">
+                            <li class="active" data-target="#home">home</li>
+                            <li data-target="#about">about</li>
+                            <li data-target="#services">services</li>
+                            <li data-target="#portfolio">portfolio</li>
+                            <li data-target="#experience">experience</li>
+                            <li data-target="#contact">contact</li>
+                        </ul>
+                        <!--end links-->
+
+                    </div><!--end container-->
+                </nav>
+                <!-------------------------end nav------------------------------->
+
+
+
+                <!--------------------------start home---------------------------->
+                <section id="home" :style="'background-image: url('+data.home.background_image+')'">
+
+                    <!--<div id=""></div>-->
+
+                    <div class="overlay">
+
+                        <!--start particles div-->
+                        <div id="anim"><div id="particles-js"></div></div>
+                        <!--end particles div-->
+
+                        <!--start home inner-->
+                        <div class="home-inner">
+                            <!--start container-->
+                            <div class="container">
+
+                                <!--start home inner-text-->
+                                <div class="inner-text">
+                                    <h1>{{data.home.main_text}}</h1>
+                                    <h4>{{data.home.second_text_part1}} {{home.second_text_part2}}|</h4>
+                                    <a href="#" class="uo-btn">download resume</a>
+                                </div>
+                                <!--end home inner-text-->
+
+                                <!--start down arrow-->
+                                <i class="down-arrow fa fa-angle-double-down fa-2x"></i>
+                                <!--end down arrow-->
+
+                            </div><!--end container-->
+                        </div>
+                        <!--end home inner-->
+
+                    </div><!--end overlay-->
+                </section>
+                <!---------------------------end home----------------------------->
+
+
+
+                <!------------------------start about---------------------------->
+                <section id="about">
+                    <div class="container">
+
+                        <!--start section header-->
+                        <div class="header">
+                            <h4>{{data.about.header}}</h4>
+                        </div>
+                        <!--end section header-->
+
+                        <div class="row">
+
+                            <!--start img section-->
+                            <div class="col-lg-6">
+                                <div class="img square">
+                                    <img :src="data.about.image_url" alt="profile image">
+                                </div>
+                            </div>
+                            <!--end img section-->
+
+                            <!--start text section-->
+                            <div class="col-lg-6">
+                                <div class="text-bio">
+                                    <p>{{data.about.paragraph1}}</p>
+                                    <p>{{data.about.paragraph1}}</p>
+                                    <ul class="list-unstyled">
+                                        <li><a :href="data.about.facebook"><i class="fa fa-facebook fa-2x"></i></a></li>
+                                        <li><a :href="data.about.twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        <li><a :href="data.about.instagram"><i class="fa fa-instagram fa-2x"></i></a></li>
+                                        <li><a :href="data.about.pinterest"><i class="fa fa-pinterest fa-2x"></i></a></li>
+                                        <li><a :href="data.about.google"><i class="fa fa-google fa-2x"></i></a></li>
+                                        <li><a :href="data.about.youtube"><i class="fa fa-youtube fa-2x"></i></a></li>
+                                    </ul>
+                                </div><!--end txt-->
+                            </div>
+                            <!--end text section-->
+
+                        </div>
+                        <!--end row-->
+
+                    </div><!--end container-->
+                </section>
+                <!-------------------------end about---------------------------->
+
+
+
+
+                <!------------------------start services---------------------------->
+                <section id="services">
+                    <div class="container">
+
+                        <!--start section header-->
+                        <div class="header">
+                            <h4>{{data.services.header}}</h4>
+                        </div>
+                        <!--end section header-->
+
+                        <!--start services content-->
+                        <div class="row text-center">
+
+                            <!--start single service-->
+                            <div v-for="list in data.services.list" class="col-lg-3 col-md-6">
+                                <!--start service-->
+                                <div class="service">
+                                    <i class="fa fa-4x" :class="list.icon"></i>
+                                    <h4>{{list.name}}</h4>
+                                    <p>{{list.description}}</p>
+                                </div><!--end service-->
+                            </div><!--end col-->
+                            <!--end single service-->
+
+                        </div>
+                        <!--end row-->
+
+                    </div><!--end container-->
+                </section>
+                <!-------------------------end services---------------------------->
+
+
+
+
+                <!-------------------------start portfolio---------------------------->
+                <section id="portfolio">
+                    <div class="container">
+
+                        <!--start section header-->
+                        <div class="header">
+                            <h4>my portfolio</h4>
+                        </div>
+                        <!--end section header-->
+
+
+                        <!--start filter menu-->
+                        <ul>
+                            <li class="active" data-filter="all">all</li>
+                            <li v-for="item in data.portfolio.filter" :data-filter="'.'+item">{{item}}</li>
+                        </ul>
+                        <!--end filter menu-->
+
+                        <!--start portfolio items-->
+                        <div class="row uo-grid">
+
+                            <!--start single item-->
+                            <div v-for="item in data.portfolio.list" class="mix col-lg-4 col-md-6" :class="item.filter">
+                                <div class="item">
+                                    <img :src="item.image_url" alt="">
+                                    <div class="overlay">
+                                        <h4>{{item.name}}</h4>
+                                        <span>{{item.filter}}</span>
+                                    </div>
+                                </div><!--end item-->
+                            </div><!--end col-->
+                            <!--end single item-->
+
+
+                        </div>
+                        <!--end portfolio items-->
+
+                    </div><!--end container-->
+                </section>
+                <!-------------------------end portfolio---------------------------->
+
+
+                <!-------------------------start experience---------------------------->
+                <section id="experience">
+                    <div class="container">
+
+                        <!--start section header-->
+                        <div class="header">
+                            <h4>{{data.experience.header}}</h4>
+                        </div>
+                        <!--end section header-->
+
+                        <div class="content">
+
+                            <!--start single experience-->
+                            <div v-for="item in data.experience.list" class="item">
+                                <h4>{{item.name}}</h4>
+                                <span>item.date</span>
+                                <p>{{item.description}}</p>
+                            </div>
+                            <!--end single experience-->
+
+
+                        </div><!--end content-->
+
+                    </div><!--end container-->
+                </section>
+                <!-------------------------end experience---------------------------->
+
+
+
+                <!-------------------------start contact---------------------------->
+                <section id="contact">
+                    <div class="container">
+
+                        <!--start section header-->
+                        <div class="header">
+                            <h4>{{data.form.header}}</h4>
+                        </div>
+                        <!--end section header-->
+
+                        <form class="form-row" method="post">
+
+                            <!--start single input-->
+                            <div class="form-group col-md-6">
+                                <input type="email" name="email" class="form-control" v-model="form.email"  placeholder="email" required>
+                                <input type="text" name="name" class="form-control" v-model="form.name" placeholder="name" required>
+                                <input type="text" name="subject" class="form-control" v-model="form.subject" placeholder="subject" required>
+                            </div>
+                            <!--end single input-->
+
+                            <!--start single input-->
+                            <div class="form-group col-md-6">
+                                <textarea name="message" class="form-control" v-model="form.message" placeholder="your email" required></textarea>
+                            </div>
+                            <!--end single input-->
+
+                            <!--start response message-->
+                            <div class="form-group col-12">
+                                <div class="alert" :class="form.response_type" v-show="form.response_msg_visible">{{form.response_msg}}</div>
+                            </div>
+                            <!--start response message-->
+
+                            <!--start single input-->
+                            <div class="form-group col-4 offset-4 col-md-2 offset-md-5">
+                                <button type="submit" :class={disabled:form.disabled} class="btn form-control">{{form.btn_val}}</button>
+                            </div>
+                            <!--end single input-->
+
+
+                        </form>
+
+                    </div>
+                </section>
+                <!-------------------------end contact---------------------------->
+
+                <!-------------------------start footer---------------------------->
+                <div id="footer">
+                    <h6 class="text-center">{{data.footer.text}}</h6>
+                </div>
+                <!-------------------------end footer---------------------------->
+
+            </div>
+            <!-----------------------------end template structure--------------------------------------------->
+
+
+
+
+
+            <!---------------------------start loader structure----------------------------------->
+            <div v-show="data.show_loader" id="loader">
+                <div class="item">
+                    <span></span>
+                </div>
+            </div>
+            <!---------------------------------end loader structure----------------------------->
+        </div>
+
+
+
+        <!--start script files-->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="js/vendor/mixitup.min.js"></script>
+        <script src="js/vendor/axios.js"></script>
+        <script src="js/vendor/vue.js"></script>
+        <script src="js/vendor/particles.min.js"></script>
+        <script src="data1.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/app.js"></script>
+        <!--end script files-->
+
+
+        <!--here you can change the particles-->
+        <script src="js/particles_run.js"></script>
+        <!--here you can change the particles-->
+
+    </body>
+</html>

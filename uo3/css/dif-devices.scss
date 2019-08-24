@@ -1,0 +1,157 @@
+
+/*  start import V&M */
+@import "V&M";
+/*  end import V&M */
+
+
+/* start lg devices ================================================ */
+@media (max-width: 1199px){
+
+}
+/* end lg devices ================================================ */
+
+
+/* start md devices ================================================ */
+@media (max-width: 991px){
+
+    /* start nav */
+    nav{
+
+        .uo-menu-icon{  display: block;  }
+
+        .uo-links{
+            position: fixed;
+            left: 0;
+            right: 0;
+            height: 100%;
+            top: -100%;
+            display: block;
+            background-color: $colorBlack;
+            opacity: .9;
+            padding-top: 50px;
+            overflow-y: scroll;
+
+            /* start li */
+            li{
+                display: block;
+                text-align: center;
+                padding: 5px;
+                opacity: 0;
+                margin-top: -10px;
+            }
+            /* end li */
+        }
+
+        /* start styling open nav */
+        &.uo-open{
+            .uo-links{
+                top: 0;
+                /* start li */
+                li{
+                    opacity: 1;
+                    margin-top: 0;
+                    &:nth-child(1){@include transissionDelay(.3s)}
+                    &:nth-child(2){@include transissionDelay(.4s)}
+                    &:nth-child(3){@include transissionDelay(.5s)}
+                    &:nth-child(4){@include transissionDelay(.6s)}
+                    &:nth-child(5){@include transissionDelay(.7s)}
+                    &:nth-child(6){@include transissionDelay(.8s)}
+                    &:nth-child(7){@include transissionDelay(.9s)}
+                    &:nth-child(8){@include transissionDelay(1s)}
+                }
+                /* end li */
+            }
+        }
+        /* end styling open nav */
+    }
+    /* end nav */
+
+    /* start skills section */
+    #uo-skills{
+        .uo-skills-text{
+            padding-right: 0;
+            margin-top: 0;
+            text-align: center;
+        }
+        .uo-skills-bars{
+            padding-left: 0;
+        }
+    }
+    /* end skills section */
+
+    /* start resume section */
+    #uo-resume{
+
+        .uo-timeline-title{
+            margin-left: 10% !important;
+            padding-right: 0 !important;
+            &:after{
+                right: auto !important;
+            }
+        }
+
+        .uo-timeline-mark{
+            left: 10% !important;
+            right: auto !important;
+        }
+
+        .uo-timeline-info,.uo-timeline-content {
+            float: right !important;
+            width: 90% !important;
+            text-align: left !important;
+            padding-right: 0 !important;
+            p {
+                float: left !important;
+            }
+        }
+
+    }
+    /* end resume section */
+
+
+}
+/* end md devices ================================================ */
+
+
+/* start sm devices ================================================ */
+@media (max-width: 767px){
+
+    /* start footer section */
+    footer{
+
+        .uo-contact-form{
+            padding-right: 15px !important;
+            .uo-btn{
+                display: table;
+                margin: auto;
+            }
+        }
+
+        .uo-info{
+            margin-top: 50px;
+            padding-left: 15px !important;
+        }
+
+    }
+    /* end footer section */
+
+}
+/* end sm devices ================================================ */
+
+
+/* start xs devices ================================================ */
+
+/* start nav */
+nav{
+
+
+
+    /* start open nav */
+    &.uo-open{
+
+    }
+    /* end open nav */
+}
+/* end nav */
+
+/* end xs devices ================================================ */

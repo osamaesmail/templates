@@ -1,0 +1,376 @@
+
+/*  ......................................... variables  ............................................. */
+
+
+$orangeColor:#e67e22;
+$blueColor:#3498db;
+$greenColor:#2ecc71;
+$mauveColor:#9b59b6;
+$redColor:#e74c3c;
+
+$orangeColorRGBA:rgba(211, 84, 0,.9);
+$blueColorRGBA:rgba(68,108,179,.9);
+$greenColorRGBA:rgba(1, 152, 117,.9);
+$mauveColorRGBA:rgba(103, 65, 114,.9);
+$redColorRGBA:rgba(150, 40, 27,.9);
+
+$black:#000;
+$white:#fff;
+$blackRGBA:rgba(0,0,0,.9);
+$darkWhite:#aaa;
+$lightBlack:#555;
+$footer1:rgba(30, 0, 22, .9);
+$footer2:rgba(1, 0, 41, .9);
+
+
+/*    end variables    */
+
+
+
+
+
+
+
+
+
+
+/*     start classes         */
+%transission{
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+%transission20{
+    transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out;
+}
+
+%maxWidth1000{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+%btn1{
+    border: 1px solid $darkWhite;
+    border-radius: 20px;
+    @extend %transission;
+    background-color: rgba(255,255,255,.2);
+    &:hover{
+        @extend %secondColor;
+      @extend %border-secondColor;
+    }
+  &:focus{
+    outline: none;
+  }
+}
+/*     end classes         */
+
+
+
+
+
+/*   start mixin   ..........   */
+
+/*       background-Overlay          */
+ @mixin background-overlay($color,$color1,$color2)
+ {
+    background: $color;
+    background: -webkit-linear-gradient(top left , $color1 30% , $color2 70%);
+    background: -o-linear-gradient(top right , $color1 30% , $color2 70%);
+    background: -moz-linear-gradient(top right , $color1 30% , $color2 70%);
+    background: linear-gradient(to top right , $color1 30% , $color2 70%);
+ }
+ @mixin transformScale($x,$y)
+ {
+     transform: scale($x,$y);
+    -moz-transform: scale($x,$y);
+    -webkit-transform: scale($x,$y);
+    -ms-transform: scale($x,$y);
+ }
+ @mixin transformTranslate($x,$y)
+ {
+     transform: translate($x,$y);
+    -moz-transform: translate($x,$y);
+    -webkit-transform: translate($x,$y);
+    -ms-transform: translate($x,$y);
+ }
+ @mixin transissionDelay($s)
+ {
+     transition-delay: $s+s;
+     -webkit-transition-delay: $s+s;
+     -moz-transition-delay: $s+s;
+     -o-transition-delay: $s+s;
+ }
+ @mixin transformRotate($d)
+ {
+     transform: rotate($d);
+    -moz-transform: rotate($d);
+    -webkit-transform: rotate($d);
+    -ms-transform: rotate($d);
+ }
+
+
+
+/*   start method to change formcontrol border color for bootstrab  */
+@mixin formControlBorderColor($c,$cRGBA)
+{
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px  $cRGBA;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px  $cRGBA;
+  border: 1px solid + $c;
+}
+/*    end method to change formcontrol border color for bootstrab  */
+ 
+ 
+
+
+
+/*     start method to create uo-menu-icon.cat1              */
+    @mixin uo-menu-icon($width,$height,$spanHeight,$color:#fff,$openColor:#000,$bgColor:transparent,$bgOpenColor:transparent)
+    {
+        .uo-nav{
+            &.uo-open{
+                .uo-menu-icon.uo-cat1{
+                    background-color: $bgOpenColor;
+                    ;
+                    span{
+                        @extend %bg-secondColor  /* openCplor   */
+                        ;
+                        &:nth-child(1){
+                            top: $height/2+px;
+                            -webkit-transform: rotate(135deg);
+                            -moz-transform: rotate(135deg);
+                            -o-transform: rotate(135deg);
+                            transform: rotate(135deg);
+                        }
+                        &:nth-child(2){
+                            opacity: 0;
+                            left: -60px;
+                        }
+                        &:nth-child(3){
+                            top: $height/2+px;
+                            -webkit-transform: rotate(-135deg);
+                            -moz-transform: rotate(-135deg);
+                            -o-transform: rotate(-135deg);
+                            transform: rotate(-135deg);
+                        }
+                    }
+                }
+            }
+            .uo-menu-icon.uo-cat1{
+                position: relative;
+                width: $width+px;
+                height: $height+px;
+                background-color: $bgColor;
+                ;
+                span{
+                    position: absolute;
+                    height: $spanHeight+px;
+                    width: 100%;
+                    border-radius: 2px;
+                    background-color: $color;
+                    @extend %transission;
+                    ;
+                    &:nth-child(1){
+                        top: 0;
+                    }
+                    &:nth-child(2){
+                        top: $spanHeight+($height - 2*$spanHeight)/3+px;
+                    }
+                    &:nth-child(3){
+                        top: ($spanHeight+($height - 2*$spanHeight)/3)*2+px;
+                    }
+                }
+            }
+        }
+    }
+/*     end method to create uo-menu-icon.cat1              */
+
+
+ /*   end methods    */
+
+
+
+/*  ............................................... start classes  ..............................  */
+
+
+
+
+
+/*   start font secondColor   ( color:#..... )   */
+.uo-orange %secondColor{
+  color: $orangeColor;
+}
+.uo-blue %secondColor{
+  color: $blueColor;
+}
+.uo-green %secondColor{
+  color: $greenColor;
+}
+.uo-mauve %secondColor{
+  color: $mauveColor;
+}
+.uo-red %secondColor{
+  color: $redColor;
+}
+/*   end font secondColor     ( color:#..... )  */
+
+
+
+
+
+/*    start backGround secondColor    ( background-color:#..... )   */
+.uo-orange %bg-secondColor{
+  background-color: $orangeColor;
+}
+.uo-blue %bg-secondColor{
+  background-color: $blueColor;
+}
+.uo-green %bg-secondColor{
+  background-color: $greenColor;
+}
+.uo-mauve %bg-secondColor{
+  background-color: $mauveColor;
+}
+.uo-red %bg-secondColor{
+  background-color: $redColor;
+}
+/*    start backGround secondColor    ( background-color:#..... )   */
+
+
+
+
+
+
+/*   start border secondColor   ( border-color:#..... )   */
+.uo-orange %border-secondColor{
+  border-color: $orangeColor;
+}
+.uo-blue %border-secondColor{
+  border-color: $blueColor;
+}
+.uo-green %border-secondColor{
+  border-color: $greenColor;
+}
+.uo-mauve %border-secondColor{
+  border-color: $mauveColor;
+}
+.uo-red %border-secondColor{
+  border-color: $redColor;
+}
+/*   end border secondColor     ( border-color:#..... )  */
+
+
+
+
+
+
+
+/*   start form-control secondColor        */
+.uo-orange %formControl-secondColor{
+  @include formControlBorderColor($orangeColor,$orangeColorRGBA);
+}
+.uo-blue %formControl-secondColor{
+  @include formControlBorderColor($blueColor,$blueColorRGBA);
+}
+.uo-green %formControl-secondColor{
+  @include formControlBorderColor($greenColor,$greenColorRGBA);
+}
+.uo-mauve %formControl-secondColor{
+  @include formControlBorderColor($mauveColor,$mauveColorRGBA);
+}
+.uo-red %formControl-secondColor{
+  @include formControlBorderColor($redColor,$redColorRGBA);
+}
+/*   end form-control secondColor        */
+
+
+
+
+/*  start bg-overlay */
+.uo-orange %uo-overlay{
+  @include background-overlay($blackRGBA,$blackRGBA,$orangeColorRGBA);
+}
+.uo-blue %uo-overlay{
+  @include background-overlay($blackRGBA,$blackRGBA,$blueColorRGBA);
+}
+.uo-green %uo-overlay{
+  @include background-overlay($blackRGBA,$blackRGBA,$greenColorRGBA);
+}
+.uo-mauve %uo-overlay{
+  @include background-overlay($blackRGBA,$blackRGBA,$mauveColorRGBA);
+}
+.uo-red %uo-overlay{
+  @include background-overlay($blackRGBA,$blackRGBA,$redColorRGBA);
+}
+/*  end bg-overlay */
+
+
+
+/*  start bg-overlay-reverse */
+.uo-orange %uo-overlay-reverse{
+  @include background-overlay($blackRGBA,$orangeColorRGBA,$blackRGBA);
+}
+.uo-blue %uo-overlay-reverse{
+  @include background-overlay($blackRGBA,$blueColorRGBA,$blackRGBA);
+}
+.uo-green %uo-overlay-reverse{
+  @include background-overlay($blackRGBA,$greenColorRGBA,$blackRGBA);
+}
+.uo-mauve %uo-overlay-reverse{
+  @include background-overlay($blackRGBA,$mauveColorRGBA,$blackRGBA);
+}
+.uo-red %uo-overlay-reverse{
+  @include background-overlay($blackRGBA,$redColorRGBA,$blackRGBA);
+}
+/*  end bg-overlay-reverse */
+
+
+/*  ............................................... end classes  ..............................  */
+
+
+/*  start animation for page loader     */
+@keyframes uo-web-loader {
+  0%,50%,100%{
+    @include transformScale(1,1);
+  }
+  25%{
+    @include transformScale(1, 2);
+  }
+}
+@-webkit-keyframes uo-web-loader {
+  0%,50%,100%{
+    @include transformScale(1,1);
+  }
+  25%{
+    @include transformScale(1,2);
+  }
+}
+@-moz-keyframes uo-web-loader {
+  0%,50%,100%{
+    @include transformScale(1,1);
+  }
+  25%{
+    @include transformScale(1, 2);
+  }
+}
+@-ms-keyframes uo-web-loader {
+  0%,50%,100%{
+    @include transformScale(1,1);
+  }
+  25%{
+    @include transformScale(1, 2);
+  }
+}
+@-o-keyframes uo-web-loader {
+  0%,50%,100%{
+    @include transformScale(1,1);
+  }
+  25%{
+    @include transformScale(1, 2);
+  }
+}
+/*  end animation for page loader     */

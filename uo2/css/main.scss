@@ -1,0 +1,615 @@
+/*    start variables & used classes     */
+@import "uo_framework.scss";   /*   this is my framework which contains some classes like (uo-text-center-xs)    */
+@import "V&M.scss";   /*  this sass contains the variables and placeholder selectors(%) and mixin(methods)     */
+/*    end variables   & used classes  */
+
+
+
+
+
+#uo-web-loader{
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    @extend %uo-overlay;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999999;
+    align-items: center;
+    ;
+    .uo-content{
+        margin: auto;
+        span{
+            display: inline-block;
+            height: 50px;
+            width: 20px;
+            @extend %bg-secondColor;
+            @extend %transission;
+            animation: uo-web-loader 1.5s infinite ease-in-out;
+        }
+        span:nth-child(2)
+        {
+            animation-delay: .2s;
+        }
+        span:nth-child(3)
+        {
+            animation-delay: .4s;
+        }
+        span:nth-child(4)
+        {
+            animation-delay: .6s;
+        }
+        span:nth-child(5)
+        {
+            animation-delay: .8s;
+        }
+    }
+}
+#uo-web-content{
+    overflow: hidden;
+}
+
+
+/*   start uo-nav            */
+@include uo-menu-icon(42,32,4,$white);
+.uo-nav{
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    color: $white;
+    padding: 15px;
+    background-color: rgba(0,0,0,.5);
+    z-index: 999999;
+    @extend %transission;
+    ;
+    &.uo-scrolled{
+        background-color: $black;
+        padding: 10px;
+    }
+    &.uo-open{
+        .uo-menu{
+            .uo-links{
+                li{
+                    @extend %transission;
+                    &:nth-child(1)
+                    {
+                        @include transissionDelay(.1);
+                    }
+                    &:nth-child(2)
+                    {
+                        @include transissionDelay(.2);
+                    }
+                    &:nth-child(3)
+                    {
+                        @include transissionDelay(.3);
+                    }
+                    &:nth-child(4)
+                    {
+                        @include transissionDelay(.4);
+                    }
+                    &:nth-child(5)
+                    {
+                        @include transissionDelay(.5);
+                    }
+                }
+            }
+            .uo-cont{
+                li{
+                    @extend %transission;
+                    &:nth-child(1)
+                    {
+                        @include transissionDelay(.6);
+                    }
+                    &:nth-child(2)
+                    {
+                        @include transissionDelay(.7);
+                    }
+                }
+            }
+        }
+    }
+    .uo-colors-icon{
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+        @extend %bg-secondColor;
+        margin-left: 10px;
+        cursor:pointer;
+        ;
+        &.uo-open{
+            .uo-theme-colors{
+                right: 0;
+            }
+        }
+        .uo-theme-colors{
+            position: fixed;
+            background-color: $black;
+            height: 100%;
+            width: 50px;
+            top: 0;
+            right: -50px;
+            bottom: 0;
+            z-index: 99999;
+            @extend %transission;
+            li{
+                height: 30px;
+                width: 30px;
+                border-radius: 4px;
+                background-color: white;
+                margin: 20px auto;
+                &:nth-child(1){
+                    background-color: $orangeColor;
+                }
+                &:nth-child(2){
+                    background-color: $blueColor;
+                }
+                &:nth-child(3){
+                    background-color: $greenColor;
+                }
+                &:nth-child(4){
+                    background-color: $mauveColor;
+                }
+                &:nth-child(5){
+                    background-color: $redColor;
+                }
+            }
+        }
+    }
+    .uo-menu{
+        @extend %transission;
+        ;
+        li{
+            @extend %transission;
+        }
+        .uo-links{
+            @extend %transission;
+            ;
+            li{
+                ;
+                a{
+                    @extend %transission;
+                    padding: 0 5px;  
+                    color: $white;
+                    &:hover{
+                        @extend %secondColor;
+                    }
+                }
+            }
+            
+        }
+        .uo-cont{
+            li{
+                @extend %transission;
+                ;
+                i{
+                    padding: 0 5px;
+                }
+            }
+            
+        }
+    }
+}
+/*   end uo-nav            */
+
+/*      start uo-home    */
+.uo-home{
+    background: url(../img/cover.jpg) no-repeat fixed;
+    background-size: cover;
+    color: $white;
+    .uo-overlay{
+        height: 100%;
+        width: 100%;
+        padding:170px 10px 170px 10px;
+        @extend %uo-overlay;
+    }
+    h1{
+        font-weight: bolder;
+        font-size: 60px;
+    }
+    h1,h2,h3{
+        margin: 0;
+        span{
+            @extend %secondColor;
+        }
+    }
+    .row{
+        margin: 20px 0;
+    }
+    .btn{
+        @extend %btn1;
+    }
+}
+/*      end uo-home    */
+
+/*       start uo-about    */
+.uo-about{
+    display: flex;
+    @extend %maxWidth1000;
+    margin-top: -90px;
+    ;
+    > *{
+        margin: 20px;
+    }
+    .uo-holder{
+        ;
+        .uo-imgs{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            @extend %bg-secondColor;
+;            ;
+            li{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 5px solid $darkWhite;
+                overflow: hidden;
+                ;
+                &.uo-active{
+                    img{
+                        opacity:1;
+                    }
+                }
+                img{
+                    opacity:0;
+                    width: 100%;
+                    @extend %transission20;
+                }
+            }
+        }
+        .uo-dots{
+            margin:auto;
+            padding:0;
+            display: table;
+            ;
+           li{
+                width:10px;
+                height:10px;
+                border-radius: 50%;
+                margin: 5px;
+                background-color: $darkWhite;
+                display:inline-block;
+                cursor: pointer;
+                @extend %transission;
+           }
+           li.uo-active,li:hover{
+               @extend %bg-secondColor;
+               @include transformScale(1.5,1.5);
+           }
+        }
+    }
+    .uo-info{
+        border-bottom: 1px solid $darkWhite;
+        ;
+        h3{
+            color: $white;
+            padding-top: 20px;
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+}
+/*       start uo-about    */
+
+/*       start uo-services    */
+.uo-services{
+    @extend %maxWidth1000;
+    text-align: center;
+    margin: 50px auto;
+    ;
+    .uo-service{
+        height: 300px;
+    }
+    i{
+        font-size: 100px;
+        height: 150px;
+        width: 150px;
+        line-height: 150px;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        @extend %transission;
+        cursor: default;
+        ;
+        &:hover{
+            @extend %border-secondColor;
+            font-size: 70px;
+            @extend %secondColor;
+        }
+    }
+    p{
+        padding: 10px;
+    }
+}
+/*       end uo-services    */
+
+/*       start uo-latestProject    */
+.uo-latestProject{
+    background: url(../img/cover2.jpg) no-repeat fixed;
+    background-size: cover;
+    color: $white;
+    overflow: hidden;
+    ;
+    .uo-mockup.uo-cat1{
+        @include transformScale(1.5,1.5);
+        transform-origin: top;
+        position: relative;
+        height: 250px;
+        width: 200px;
+        margin: auto;
+        top: 0;
+        ;
+        .uo-holder{
+            position: absolute;
+            overflow: hidden;
+            height: 200px;
+            background-size: 100% auto;
+            background-position: center top;
+            background-repeat: no-repeat;
+            .uo-preview{
+                position: absolute;
+                bottom: 0;
+                overflow: hidden;
+                background-color: #ec8000;
+                ;
+                img{
+                    position: absolute;
+                    @extend %transission20;
+                    width: 100%;
+                    top: 0;
+                    ;
+                    &:hover{
+                        @include transformTranslate(0,-100%);
+                        top: 100%;
+                    }
+                }
+            }
+            ;
+            &.uo-deskTop{
+                width: 200px;
+                background-image: url(../img/m3.png);
+                .uo-preview{
+                    height: 100px;
+                    top: 19px;
+                    left: 16px;
+                    right: 18px;
+                }
+            }
+            &.uo-tab{
+                width: 90px;
+                z-index: 9;
+                left: -30px;
+                margin-top: 50px;
+                background-image: url(../img/m2.png);
+                .uo-preview{
+                    height: 93px;
+                    right: 10px;
+                    left: 11px;
+                    top: 16px;
+                }
+            }
+            &.uo-phone{
+                width: 50px;
+                z-index: 9;
+                right: -10px;
+                margin-top: 80px;
+                background-image: url(../img/m1.png);
+                .uo-preview{
+                    height: 69px;
+                    top: 11px;
+                    right: 6px;
+                    left: 6px;
+                }
+            }
+        }
+    }
+    .uo-overlay{
+        height: 100%;
+        width: 100%;
+        padding-bottom: 50px;
+        @extend %uo-overlay;
+    }
+    .uo-maxWidth{
+        @extend %maxWidth1000;
+    }
+    .row{
+        margin-top: 40px;
+    }
+    .btn{
+        @extend %btn1;
+        margin-top: 20px;
+    }
+}
+/*       end uo-latestProject    */
+
+
+/*  start uo-projects     */
+.uo-projects{
+    margin: 50px auto;
+    color: $lightBlack;
+    ;
+    .uo-filter{
+        display: table;
+        margin: 20px auto;
+        ;
+        li{
+            margin: 5px;
+            cursor: pointer;
+            padding: 7px;
+            border-radius: 4px;
+            @extend %transission;
+            ;
+            &:hover,&.uo-active{
+                @extend %bg-secondColor;
+                color: $white;
+
+            }
+        }
+    }
+    .uo-project{
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        ;
+        &:hover{
+            .uo-overlay{
+                opacity: 1;
+            }
+            .uo-pro-name{
+                top: 100px;
+            }
+            img{
+                @include transformScale(1.02,1.02);
+            }
+            .btn{
+                bottom: 100px;
+            }
+        }
+        *{
+            position: absolute;
+        }
+        .uo-overlay{
+            height: 100%;
+            width: 100%;
+            z-index: 99;
+            @extend %uo-overlay;
+            @extend %transission;
+            opacity: 0;
+        }
+        .uo-pro-name{
+            top: -50px;
+            @extend %transission;
+            text-align: center;
+            width: 100%;
+            z-index: 999;
+            color: $white;
+        }
+        img{
+            width: 100%;
+            @extend %transission;
+        }
+        .btn{
+            position: absolute;
+            @extend %btn1;
+            z-index: 999;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            width: 100px;
+            margin: auto;
+        }
+    }
+    .uo-load-more{
+        @extend %btn1;
+        color: $lightBlack;
+    }
+}
+/*  end uo-projects     */
+
+/*       start uo-contact    */
+.uo-contact{
+    background: url(../img/cover3.jpg) no-repeat fixed;
+    background-size: cover;
+    color: $white;
+    ;
+    .uo-overlay{
+        height: 100%;
+        width: 100%;
+        @extend %uo-overlay-reverse;
+    }
+    .uo-maxWidth{
+        @extend %maxWidth1000;
+    }
+    .uo-follows{
+        padding-right: 100px;
+        ;
+        p{
+            padding-bottom: 50px;
+        }
+        .uo-list-contact{
+            li{
+                height: 20px;
+                width: 20px;
+                line-height: 20px;
+                text-align: center;
+                background-color: $white;
+                border-radius: 2px;
+                @extend %transission;
+                ;
+                a{
+                    color: $black;
+                }
+                &:hover{
+                    @extend %bg-secondColor;
+                    a{
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .uo-cont{
+        padding-left: 100px;
+        ;
+        form{
+            .form-control{
+                margin-bottom: 10px;
+                border-radius: 0;
+                border: none;
+                background-color: $lightBlack;
+                ;
+                &:focus{
+                    @extend %formControl-secondColor;
+                }
+            }
+            textArea{
+                height: 100px;
+                resize: none;
+            }
+            .btn{
+                border-radius: 0;
+                width: 100px;
+                background-color: #555;
+                color: $darkWhite;
+                @extend %transission;
+                ;
+                &:hover{
+                    color: $white;
+                    @extend %bg-secondColor;
+                }
+            }
+        }
+    }
+    .uo-footer{
+        ;
+        h2{
+            font-weight: bolder;
+        }
+        padding: 50px 0;
+    }
+}
+/*       end uo-contact    */
+
+
+/*     start uo-go-top      */
+.uo-go-top{
+    position: fixed;
+    display: block;
+    padding: 5px;
+    right: 10px;
+    bottom: 10px;
+    color: $white;
+    @extend %secondColor;
+    background-color: $blackRGBA;
+    border-radius: 4px;
+    z-index: 9999999;
+    display: none;
+}
+/*    end uo-go-top       */
+
+
+/*     start small devices             */
+@import "main_otheDevices.scss";
+/*     end small devices             */

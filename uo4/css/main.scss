@@ -1,0 +1,629 @@
+//start import v&m which contains the variables
+@import "v&m";
+//end import v&m
+
+
+//start main styles --------------------------------------------------
+
+//start home background
+#home{
+    ;
+}
+//end home background
+
+//start html &body & #app tag style
+html,body,#template,#app{
+    height:100%;
+    width: 100%;
+}
+
+
+//end html &body & #app tag style
+
+//start body tag style
+body{
+    @extend %primary-color;
+    @extend %second-color;
+    @extend %primary-bg-color;
+
+    font-family: Quicksand,sans-serif;
+}
+//end body tag style
+
+//start a tag main style
+a,a:visited,a:hover,a:active{
+    text-decoration: none;
+    color: inherit;
+}
+//end a tag main style
+
+//start section header style
+section:not(:first-of-type) {
+    padding: 50px 0;
+
+    //start section header
+    .header{
+        text-transform: uppercase;
+        @extend %primary-color;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    //end section header
+}
+//end section header style
+
+// end main styles ----------------------------------------------------------
+
+
+//start nav -----------------------------------------------------------------
+nav{
+    @extend %primary-color-rev;
+    position: fixed;
+    top:0px;
+    left: 0;
+    right: 0;
+    text-transform: uppercase;
+    padding: 20px 0;
+    z-index: 9999;
+
+    //start scrolled nav
+    &.scrolled,&.open{
+        @include box-shadow(0 ,1px, 5px ,#aaa);
+        @extend %primary-bg-color;
+        @extend %primary-color;
+        padding: 10px 0;
+    }
+    //end scrolled nav
+
+    //start brand
+    .brand{
+        @extend %float-left;
+    }
+    //end brand
+
+    //start menu icon style
+    .menu-icon{
+        @extend %float-right;
+        @extend %transition;
+        display: none;
+        cursor: pointer;
+        z-index: 999999;
+
+        &:before{
+            content: '\f0c9';
+        }
+    }
+    //end menu icon style
+
+    //start links
+    .links{
+        @extend %float-right;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        //start li style
+        li{
+            display: inline-block;
+            margin: 0 5px;
+            position: relative;
+            @extend %transition;
+            cursor: pointer;
+
+
+            //start a active
+            &.active{
+                border-bottom: 1px solid;
+                padding-bottom: 5px;
+            }
+            //start a active
+
+            //start a hover
+            &:hover{
+                border-bottom: 1px solid;
+                padding-bottom: 10px;
+            }
+            //start a hover
+        }
+        //end li style
+    }
+    //end links
+}
+//end nav ---------------------------------------------------------------------
+
+
+
+//start home style -------------------------------------------------------------
+#home{
+    @extend %primary-color-rev;
+    background: no-repeat center center;
+    background-size: cover !important;
+    height: 100%;
+    text-transform: uppercase;
+    text-align: center;
+
+    //start overlay
+    .overlay{
+        @extend %overlay-color;
+        height: 100%;
+        width: 100%;
+    }
+    //end overlay
+
+    //start particles-js style
+    #particles-js,.home-inner{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    //end particles-js style
+
+    //start header container
+    .container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+
+        //start inner-text
+        .inner-text{
+            //start h1 style
+            h1{
+                font-size: 70px;
+            }
+            //end h1 style
+
+            //start btn style
+            .uo-btn{
+                display: table;
+                margin: auto;
+                border: 1px solid;
+                @extend %primary-border-color-rev;
+                @extend %primary-color-rev;
+                background-color: transparent;
+                padding: 5px;
+                @extend %transition;
+
+                //start btn hover
+                &:hover{
+                    @extend %primary-bg-color;
+                    @extend %primary-color;
+                }
+                //end btn hover
+            }
+            //end btn style
+
+        }
+        //end inner-text
+
+        //start angle down style
+        .down-arrow{
+            position: absolute;
+            bottom: 20px;
+            cursor: pointer;
+            animation: down-arrow .5s infinite alternate ;
+        }
+        //start angle down style
+    }
+    //end header container
+}
+//end home style
+
+
+//start services style --------------------------------------------------------
+#about{
+
+    //start img class style
+    .img{
+        border: 10px solid;
+        @extend %primary-border-color;
+        height: 400px;
+        width: 400px;
+        overflow: hidden;
+        margin: auto;
+        max-width: 100%;
+
+        //start img style
+        img{
+            height: 100%;
+            width: 100%;
+            @extend %transition;
+
+            //start hover on img
+            &:hover{
+                @extend %transform-scale;
+            }
+            //end hover on img
+        }
+        //end img style
+    }
+    //start img class style
+
+    //start text-bio style
+    .text-bio{
+        //start ul style
+        ul{
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+
+
+            //start li style
+            li{
+                display: inline-block;
+                margin-right: 10px;
+                @extend %transition;
+
+                //start li hover
+                &:hover{
+                    @extend %primary-color;
+                }
+                //end li hover
+            }
+            //end li style
+        }
+        //end ul style
+    }
+    //end text-bio style
+
+}
+//end services style ----------------------------------------------------------
+
+//start services style --------------------------------------------------------
+#services{
+    @extend %second-bg-color;
+
+    //start single service style
+    .service{
+        height: 200px;
+        padding: 10px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        @extend %primary-bg-color;
+
+        //start service hover
+        &:hover{
+
+            //start icon style
+            i{
+                line-height: 70px;
+                font-size: 30px;
+            }
+            //end icon style
+
+            //start h4 & i style
+            h4,i{
+                @extend %primary-color;
+            }
+            //end h4 & i style
+
+            //start info style
+            h4,p{
+                opacity: 1;
+            }
+            //end info style
+
+        }
+        //end service hover
+
+        //start icon style
+        i{
+            line-height: 200px;
+            @extend %transition;
+        }
+        //end icon style
+
+        //start h4 & p style
+        h4,p{
+            opacity: 0;
+            @extend %transition;
+        }
+        //end h4 & p style
+
+    }
+    //end single service style
+}
+//end services style ----------------------------------------------------------
+
+
+//start portfolio style ----------------------------------------------------------
+#portfolio{
+
+    //start menu filter style
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0 auto 20px auto;
+        display: table;
+
+
+        //start style li
+        li{
+            display: inline-block;
+            padding: 0 10px;
+            @extend %transition;
+            cursor: pointer;
+
+            //start active li
+            &.active,&:hover{
+                border-bottom: 1px solid;
+                padding-bottom: 5px;
+            }
+            //start active li
+        }
+        //end style li
+    }
+    //end menu filter style
+
+    //start item style
+    .item{
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        margin-bottom: 15px;
+        @extend %primary-color-rev;
+        text-align: center;
+        @include box-shadow(0,0,5px,#aaa);
+
+        //start item hover
+        &:hover{
+
+            //start overlay style
+            .overlay{
+                opacity: 1;
+
+                //start h4 style
+                h4{
+                    bottom: 49%;
+                }
+                //end h4 style
+
+                //start span style
+                span{
+                    top: 49%;
+                }
+                //end span style
+
+            }
+            //end overlay style
+
+        }
+        //end item hover
+
+        //start img style
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        //end img style
+
+        //start overlay style
+        .overlay{
+            position: absolute;
+            @extend %overlay-color;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            @extend %transition;
+
+            //start h4 style
+            h4{
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                @extend %transition;
+            }
+            //end h4 style
+
+            //start span style
+            span{
+                position: absolute;
+                display: block;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin: auto;
+                width: 100px;
+                @extend %second-bg-color;
+                @extend %primary-color;
+                @extend %transition;
+            }
+            //end span style
+
+        }
+        //end overlay style
+
+    }
+    //end item style
+}
+//end portfolio style ----------------------------------------------------------
+
+
+//start experience style ----------------------------------------------------------
+#experience{
+    .item{
+        text-align: center;
+        width: 50%;
+        position: relative;
+
+        //start before
+        &:before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            @extend %primary-bg-color-rev;
+            top:16px;
+        }
+        //end before
+
+        //start after style
+        &:after{
+            content: '';
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            background-color: transparent;
+            border: 5px solid;
+            border-radius: 50%;
+            @extend %primary-border-color;
+            top:0;
+        }
+        //end after style
+
+
+        //start odd item style
+        &:nth-child(odd)
+        {
+            left: 50%;
+            text-align: left;
+            padding-left: 50px;
+
+            //start before style
+            &:before{
+                left: -1px;
+            }
+            //start before style
+
+            //start after style
+            &:after{
+                left: -8px;
+            }
+            //end after style
+        }
+        //end odd item style
+
+        //start even item style
+        &:nth-child(even)
+        {
+            text-align: right;
+            padding-right: 50px;
+
+            //start before style
+            &:before{
+                right: -1px;
+            }
+            //start before style
+
+            //start after style
+            &:after{
+                right: -8px;
+            }
+            //end after style
+        }
+        //end even item style
+
+        //start h4 style
+        h4{
+            @extend %primary-color;
+        }
+        //end h4 style
+    }
+}
+//end experience style ----------------------------------------------------------
+
+
+//start contact form style ----------------------------------------------------------
+#contact{
+
+    @extend %second-bg-color;
+
+    //start form style
+    form{
+
+        //start form-control style
+        .form-control{
+            margin-bottom: 5px;
+            @extend %transition;
+            outline: none;
+            border: none;
+
+            //start focus style
+            &:focus{
+                @include box-shadow(0 ,1px, 5px ,#aaa);
+            }
+            //end focus style
+
+        }
+        //end form-control style
+
+        //start textarea style
+        textarea{
+            height: 100%;
+        }
+        //end textarea style
+
+    }
+    //end form style
+}
+//end contact form style ----------------------------------------------------------
+
+
+
+//start footer style
+#footer{
+    padding: 20px;
+}
+//end footer style
+
+
+//start loader style
+#loader{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    @extend %primary-bg-color;
+
+
+    //start loader item style
+    .item{
+        position: absolute;
+        display: block;
+        height: 50px;
+        width: 50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+
+        //start span animation
+        span{
+            position: absolute;
+            display: block;
+            height: 0;
+            width: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            @extend %primary-bg-color-rev;
+            animation: loader .5s infinite alternate ;
+
+        }
+        //end span animation
+    }
+    //end loader item style
+
+}
+//end loader style
+
+
+
+
+//start import different screen styles
+@import "deff-devices";
+//end import different screen styles
+
+//start import animation keyframes
+@import "animation";
+//end import animation keyframes
